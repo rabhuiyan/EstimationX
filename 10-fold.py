@@ -46,7 +46,7 @@ for file in files:
         val_set.to_csv(os.path.join(output_dir, f'fold_{i + 1}_validation.csv'), index=False)
         test_set.to_csv(os.path.join(output_dir, f'fold_{i + 1}_test.csv'), index=False)
 
-        # Add this code after creating train_set, val_set, and test_set in your existing loop
+        # Verify
         subject_intersection_train_val = set(train_set['subject_id']).intersection(set(val_set['subject_id']))
         subject_intersection_train_test = set(train_set['subject_id']).intersection(set(test_set['subject_id']))
         subject_intersection_val_test = set(val_set['subject_id']).intersection(set(test_set['subject_id']))
