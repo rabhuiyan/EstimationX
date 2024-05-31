@@ -24,7 +24,7 @@ output_dir = './10-fold-result/NIR/'
 
 # Model Parameters
 model_name = 'vgg'
-pretrained = True
+pretrained = False
 solver_name = 'Adam'
 batch_size = 20
 lr = 0.0001
