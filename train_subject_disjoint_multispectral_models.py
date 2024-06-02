@@ -72,6 +72,12 @@ if model_name == "inception":
         transforms.Lambda(lambda img: ImageEnhance.Sharpness(img).enhance(2.0)),
         transforms.ToTensor()
     ])
+
+    testTransform = transforms.Compose([
+        transforms.Resize(299),
+        transforms.ToTensor()
+        ])
+
 else:
     trainTransform = transforms.Compose([
     transforms.RandomHorizontalFlip(),
@@ -81,9 +87,9 @@ else:
     transforms.ToTensor()
     ])
 
-testTransform = transforms.Compose([
-    transforms.ToTensor()
-])
+    testTransform = transforms.Compose([
+        transforms.ToTensor()
+        ])
 
 # Perform 10-fold cross-validation
 mse_fold_list = []
